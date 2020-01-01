@@ -1,0 +1,20 @@
+cver := g++ -std=c++17
+
+.PHONY: build clean
+
+build: generator.exe
+
+melody.cpp: generator.exe
+	./generator.exe
+
+generator.exe : generator.obj note_export_to_rtttl.obj rtttl_player.obj
+	$(cver) generator.obj note_export_to_rtttl.obj rtttl_player.obj -o generator.exe
+
+generator.obj : generator.cpp note_export_to_rtttl.hpp melody.hpp rtttl_player.hpp
+	$(cver) -c generator.cpp -o generator.obj
+
+note_export_to_rtttl.obj : note_export_to_rtttl.cpp note_export_to_rtttl.hpp
+	$(cver) -c note_export_to_rtttl.cpp -o note_export_to_rtttl.obj
+
+rtttl_player.obj : rtttl_player.cpp rtttl_player.hpp
+	$(cver) -c rtttl_player.cpp -o rtttl_player.obj

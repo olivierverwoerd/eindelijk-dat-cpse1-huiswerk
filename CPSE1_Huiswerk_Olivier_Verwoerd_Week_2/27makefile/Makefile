@@ -8,23 +8,23 @@
 # 
 #############################################################################
 
-# source files in this project (main.cpp is automatically assumed)
-SOURCES := converter.cpp player.cpp
-
-# header files in this project
-HEADERS := converter.hpp player.hpp
-
-# other places to look for files for this project
-SEARCH  :=
-
-converter.cpp: Makefile convert.exe   
-	convert convertme "beep.txt" > converter.cpp
-	
-convert.exe: convert.cpp
-	g++ convert.cpp -o convert.exe
+# source & header files in this project (main.cpp is automatically assumed)
 
 
-# set REATIVE to the next higher directory 
+
+HEADERS += note.hpp
+HEADERS += melody.hpp
+SOURCES += melody.cpp
+HEADERS += note_player.hpp
+
+HEADERS += note_player_gpio.hpp
+SOURCES += note_player_gpio.cpp
+
+HEADERS += rtttl_player.hpp
+SOURCES += rtttl_player.cpp
+
 # and defer to the Makefile.due there
+include maakfile
 RELATIVE := $(RELATIVE)../
 include $(RELATIVE)Makefile.due
+

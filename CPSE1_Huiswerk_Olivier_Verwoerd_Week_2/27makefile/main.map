@@ -1,7 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
-                              hwlib.o (__aeabi_ldivmod)
+                              rtttl_player.o (__aeabi_ldivmod)
 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
                               hwlib.o (__aeabi_uldivmod)
 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
@@ -16,31 +16,80 @@ __dso_handle        0x4               bmptk_cortex.o
 
 Discarded input sections
 
- .text          0x00000000        0x0 converter.o
- .data          0x00000000        0x0 converter.o
- .bss           0x00000000        0x0 converter.o
- .group         0x00000000        0x8 player.o
- .group         0x00000000        0x8 player.o
- .group         0x00000000        0x8 player.o
- .text          0x00000000        0x0 player.o
- .data          0x00000000        0x0 player.o
- .bss           0x00000000        0x0 player.o
+ .text          0x00000000        0x0 melody.o
+ .data          0x00000000        0x0 melody.o
+ .bss           0x00000000        0x0 melody.o
+ .comment       0x00000000       0x12 melody.o
+ .group         0x00000000        0x8 note_player_gpio.o
+ .text          0x00000000        0x0 note_player_gpio.o
+ .data          0x00000000        0x0 note_player_gpio.o
+ .bss           0x00000000        0x0 note_player_gpio.o
  .text._ZN3due11ad_pin_infoENS_7ad_pinsE
-                0x00000000       0x1c player.o
+                0x00000000       0x1c note_player_gpio.o
  .text._ZN3due11ad_seq_infoEm
-                0x00000000       0x20 player.o
+                0x00000000       0x20 note_player_gpio.o
  .text._ZN5hwlib19uart_char_availableEv
-                0x00000000        0x4 player.o
+                0x00000000        0x4 note_player_gpio.o
  .text._ZN5hwlib9uart_getcEv
-                0x00000000        0x4 player.o
- .text._Z8is_digitc
-                0x00000000        0xc player.o
- .text._Z12is_lowercasec
-                0x00000000        0xc player.o
+                0x00000000        0x4 note_player_gpio.o
  .rodata._ZZN3due11ad_pin_infoENS_7ad_pinsEE17ad_pin_info_array
-                0x00000000        0xc player.o
+                0x00000000        0xc note_player_gpio.o
  .rodata._ZZN3due11ad_seq_infoEmE12ad_seq_array
-                0x00000000       0x70 player.o
+                0x00000000       0x70 note_player_gpio.o
+ .group         0x00000000        0x8 rtttl_player.o
+ .group         0x00000000        0x8 rtttl_player.o
+ .group         0x00000000        0x8 rtttl_player.o
+ .text          0x00000000        0x0 rtttl_player.o
+ .data          0x00000000        0x0 rtttl_player.o
+ .bss           0x00000000        0x0 rtttl_player.o
+ .text._ZN5hwliblsERNS_7ostreamENS_6_flushE.isra.0
+                0x00000000        0xe rtttl_player.o
+ .text._ZN6sam3xa10SystemInitEv
+                0x00000000       0x7c rtttl_player.o
+ .text._ZN3due8pin_infoENS_4pinsE
+                0x00000000       0x20 rtttl_player.o
+ .text._ZN3due11ad_pin_infoENS_7ad_pinsE
+                0x00000000       0x1c rtttl_player.o
+ .text._ZN3due11ad_seq_infoEm
+                0x00000000       0x20 rtttl_player.o
+ .text._ZN3due14port_registersEm
+                0x00000000       0x48 rtttl_player.o
+ .text._ZN3due12ticks_per_usEv
+                0x00000000        0x6 rtttl_player.o
+ .text._ZN3due9now_ticksEv
+                0x00000000       0x74 rtttl_player.o
+ .text._ZN5hwlib9uart_putcEc
+                0x00000000        0x4 rtttl_player.o
+ .text._ZN5hwlib19uart_char_availableEv
+                0x00000000        0x4 rtttl_player.o
+ .text._ZN5hwlib9uart_getcEv
+                0x00000000        0x4 rtttl_player.o
+ .text._Z8is_digitc
+                0x00000000        0xc rtttl_player.o
+ .text._Z12is_lowercasec
+                0x00000000        0xc rtttl_player.o
+ .text._Z10rtttl_playR11note_playerPKc
+                0x00000000      0x278 rtttl_player.o
+ .bss._ZZN3due9now_ticksEvE4high
+                0x00000000        0x8 rtttl_player.o
+ .bss._ZZN3due9now_ticksEvE8last_low
+                0x00000000        0x4 rtttl_player.o
+ .bss._ZZN3due9now_ticksEvE9init_done
+                0x00000000        0x1 rtttl_player.o
+ .data._ZN6sam3xa15SystemCoreClockE
+                0x00000000        0x4 rtttl_player.o
+ .data.frequencies
+                0x00000000       0x1c rtttl_player.o
+ .rodata._Z10rtttl_playR11note_playerPKc.str1.1
+                0x00000000       0x7e rtttl_player.o
+ .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
+                0x00000000       0x33 rtttl_player.o
+ .rodata._ZZN3due11ad_pin_infoENS_7ad_pinsEE17ad_pin_info_array
+                0x00000000        0xc rtttl_player.o
+ .rodata._ZZN3due11ad_seq_infoEmE12ad_seq_array
+                0x00000000       0x70 rtttl_player.o
+ .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
+                0x00000000       0xa4 rtttl_player.o
  .group         0x00000000        0x8 hwlib.o
  .group         0x00000000        0x8 hwlib.o
  .group         0x00000000        0x8 hwlib.o
@@ -236,11 +285,19 @@ Discarded input sections
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
  .text._ZN5hwlib7pin_out5flushEv
                 0x00000000        0x2 main.o
+ .text._ZN5hwlib7ostream6fillerEi
+                0x00000000       0x1a main.o
+ .text._ZN5hwliblsERNS_7ostreamEPKc
+                0x00000000       0x54 main.o
  .text._ZN6sam3xa10SystemInitEv
                 0x00000000       0x7c main.o
  .text._ZN3due8pin_infoENS_4pinsE
@@ -327,8 +384,9 @@ nul              0x20018000         0x00000000         xrw
 Linker script and memory map
 
 LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a
-LOAD converter.o
-LOAD player.o
+LOAD melody.o
+LOAD note_player_gpio.o
+LOAD rtttl_player.o
 LOAD hwlib.o
 LOAD main.o
 LOAD bmptk_cortex.o
@@ -350,7 +408,7 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0xc28
+.text           0x00000000      0xea8
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -360,152 +418,149 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x00000000                __vectors
                 0x00000020                . = ALIGN (0x4)
  *(.text .text.* .gnu.linkonce.t.*)
- .text._Z9convertmev
-                0x00000020        0x8 converter.o
-                0x00000020                _Z9convertmev
- .text._ZN10lsp_player4playERK4note
-                0x00000028       0x64 player.o
-                0x00000028                _ZN10lsp_player4playERK4note
- .text._ZN5hwliblsERNS_7ostreamENS_6_flushE.isra.1
-                0x0000008c        0xe player.o
- .text._ZN5hwlib7ostreamlsEc
-                0x0000009a        0xe player.o
-                0x0000009a                _ZN5hwlib7ostreamlsEc
- .text._ZN5hwliblsERNS_7ostreamEPKc
-                0x000000a8       0x66 player.o
-                0x000000a8                _ZN5hwliblsERNS_7ostreamEPKc
- *fill*         0x0000010e        0x2 
+ .text._ZN16note_player_gpio4playERK4note
+                0x00000020       0x70 note_player_gpio.o
+                0x00000020                _ZN16note_player_gpio4playERK4note
  .text._ZN6sam3xa10SystemInitEv
-                0x00000110       0x7c player.o
-                0x00000110                _ZN6sam3xa10SystemInitEv
+                0x00000090       0x7c note_player_gpio.o
+                0x00000090                _ZN6sam3xa10SystemInitEv
  .text._ZN3due8pin_infoENS_4pinsE
-                0x0000018c       0x20 player.o
-                0x0000018c                _ZN3due8pin_infoENS_4pinsE
+                0x0000010c       0x20 note_player_gpio.o
+                0x0000010c                _ZN3due8pin_infoENS_4pinsE
  .text._ZN3due14port_registersEm
-                0x000001ac       0x48 player.o
-                0x000001ac                _ZN3due14port_registersEm
+                0x0000012c       0x48 note_player_gpio.o
+                0x0000012c                _ZN3due14port_registersEm
  .text._ZN3due12ticks_per_usEv
-                0x000001f4        0x6 player.o
-                0x000001f4                _ZN3due12ticks_per_usEv
- *fill*         0x000001fa        0x2 
+                0x00000174        0x6 note_player_gpio.o
+                0x00000174                _ZN3due12ticks_per_usEv
+ *fill*         0x0000017a        0x2 
  .text._ZN3due9now_ticksEv
-                0x000001fc       0x74 player.o
-                0x000001fc                _ZN3due9now_ticksEv
+                0x0000017c       0x74 note_player_gpio.o
+                0x0000017c                _ZN3due9now_ticksEv
  .text._ZN5hwlib9uart_putcEc
-                0x00000270        0x4 player.o
-                0x00000270                _ZN5hwlib9uart_putcEc
- .text._Z4playR6playerPKc
-                0x00000274      0x268 player.o
-                0x00000274                _Z4playR6playerPKc
+                0x000001f0        0x4 note_player_gpio.o
+                0x000001f0                _ZN5hwlib9uart_putcEc
+ .text._ZN5hwlib7ostreamlsEc
+                0x000001f4        0xe rtttl_player.o
+                0x000001f4                _ZN5hwlib7ostreamlsEc
+ .text._ZN5hwliblsERNS_7ostreamEPKc
+                0x00000202       0x66 rtttl_player.o
+                0x00000202                _ZN5hwliblsERNS_7ostreamEPKc
  .text._ZN5hwlib7pin_out5flushEv
-                0x000004dc        0x2 hwlib.o
-                0x000004dc                _ZN5hwlib7pin_out5flushEv
+                0x00000268        0x2 hwlib.o
+                0x00000268                _ZN5hwlib7pin_out5flushEv
  .text._ZN5hwlib7ostream5flushEv
-                0x000004de        0x2 hwlib.o
-                0x000004de                _ZN5hwlib7ostream5flushEv
+                0x0000026a        0x2 hwlib.o
+                0x0000026a                _ZN5hwlib7ostream5flushEv
  .text._ZN5hwlib5panicEPKcj
-                0x000004e0        0x2 hwlib.o
-                0x000004e0                _ZN5hwlib5panicEPKcj
- *fill*         0x000004e2        0x2 
+                0x0000026c        0x2 hwlib.o
+                0x0000026c                _ZN5hwlib5panicEPKcj
+ *fill*         0x0000026e        0x2 
  .text._ZN3due9uart_initEv
-                0x000004e4       0x60 hwlib.o
-                0x000004e4                _ZN3due9uart_initEv
+                0x00000270       0x60 hwlib.o
+                0x00000270                _ZN3due9uart_initEv
  .text._ZN3due9uart_putcEc
-                0x00000544       0x1c hwlib.o
-                0x00000544                _ZN3due9uart_putcEc
+                0x000002d0       0x1c hwlib.o
+                0x000002d0                _ZN3due9uart_putcEc
  .text._ZN5hwlib20cout_using_uart_putc4putcEc
-                0x00000560        0xa hwlib.o
-                0x00000560                _ZN5hwlib20cout_using_uart_putc4putcEc
+                0x000002ec        0xa hwlib.o
+                0x000002ec                _ZN5hwlib20cout_using_uart_putc4putcEc
  .text._ZN5hwlib6now_usEv
-                0x0000056a       0x1c hwlib.o
-                0x0000056a                _ZN5hwlib6now_usEv
+                0x000002f6       0x1c hwlib.o
+                0x000002f6                _ZN5hwlib6now_usEv
  .text._ZN5hwlib12wait_us_busyEi
-                0x00000586       0x1c hwlib.o
-                0x00000586                _ZN5hwlib12wait_us_busyEi
+                0x00000312       0x1c hwlib.o
+                0x00000312                _ZN5hwlib12wait_us_busyEi
  .text._ZN5hwlib7wait_usEi
-                0x000005a2        0x4 hwlib.o
-                0x000005a2                _ZN5hwlib7wait_usEi
+                0x0000032e        0x4 hwlib.o
+                0x0000032e                _ZN5hwlib7wait_usEi
  .text._ZN5hwlib7wait_msEi
-                0x000005a6       0x16 hwlib.o
-                0x000005a6                _ZN5hwlib7wait_msEi
+                0x00000332       0x16 hwlib.o
+                0x00000332                _ZN5hwlib7wait_msEi
  .text._ZN3due7pin_out3setEbN5hwlib9bufferingE
-                0x000005bc        0xe main.o
-                0x000005bc                _ZN3due7pin_out3setEbN5hwlib9bufferingE
- *fill*         0x000005ca        0x2 
+                0x00000348        0xe main.o
+                0x00000348                _ZN3due7pin_out3setEbN5hwlib9bufferingE
+ *fill*         0x00000356        0x2 
+ .text._ZN4song4playER11note_player
+                0x00000358      0x5d0 main.o
+                0x00000358                _ZN4song4playER11note_player
  .text.startup.main
-                0x000005cc       0x58 main.o
-                0x000005cc                main
+                0x00000928       0x84 main.o
+                0x00000928                main
  .text.__startup
-                0x00000624       0x48 bmptk_cortex.o
-                0x00000624                __startup
- .text          0x0000066c       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
-                0x0000066c                __aeabi_uldivmod
- .text          0x0000069c      0x2d0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
-                0x0000069c                __udivmoddi4
- .text          0x0000096c        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
-                0x0000096c                __aeabi_ldiv0
-                0x00000970                . = ALIGN (0x4)
+                0x000009ac       0x48 bmptk_cortex.o
+                0x000009ac                __startup
+ .text          0x000009f4       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+                0x000009f4                __aeabi_uldivmod
+ .text          0x00000a24      0x2d0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+                0x00000a24                __udivmoddi4
+ .text          0x00000cf4        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+                0x00000cf4                __aeabi_ldiv0
+                0x00000cf8                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00000970        0x0 linker stubs
- .glue_7t       0x00000970        0x0 linker stubs
-                0x00000970                . = ALIGN (0x4)
+ .glue_7        0x00000cf8        0x0 linker stubs
+ .glue_7t       0x00000cf8        0x0 linker stubs
+                0x00000cf8                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata._Z9convertmev.str1.1
-                0x00000970      0x14b converter.o
- .rodata._Z4playR6playerPKc.str1.1
-                0x00000abb       0x68 player.o
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
-                0x00000b23       0x33 player.o
- *fill*         0x00000b56        0x2 
- .rodata._ZTV10lsp_player
-                0x00000b58        0xc player.o
-                0x00000b58                _ZTV10lsp_player
+                0x00000cf8       0x33 note_player_gpio.o
+ *fill*         0x00000d2b        0x1 
+ .rodata._ZTV16note_player_gpio
+                0x00000d2c        0xc note_player_gpio.o
+                0x00000d2c                _ZTV16note_player_gpio
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x00000b64       0xa4 player.o
+                0x00000d38       0xa4 note_player_gpio.o
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x00000c08       0x10 hwlib.o
-                0x00000c08                _ZTVN5hwlib20cout_using_uart_putcE
+                0x00000ddc       0x10 hwlib.o
+                0x00000ddc                _ZTVN5hwlib20cout_using_uart_putcE
  .rodata._ZTVN3due7pin_outE
-                0x00000c18       0x10 main.o
-                0x00000c18                _ZTVN3due7pin_outE
-                0x00000c28                . = ALIGN (0x4)
+                0x00000dec       0x10 main.o
+                0x00000dec                _ZTVN3due7pin_outE
+ .rodata._ZTV4song
+                0x00000dfc        0xc main.o
+                0x00000dfc                _ZTV4song
+ .rodata        0x00000e08       0x88 main.o
+ .rodata.main.str1.1
+                0x00000e90       0x17 main.o
+                0x00000ea8                . = ALIGN (0x4)
+ *fill*         0x00000ea7        0x1 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000c28                . = ALIGN (0x4)
+                0x00000ea8                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x00000c28                . = ALIGN (0x4)
+                0x00000ea8                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x00000c28                . = ALIGN (0x4)
+                0x00000ea8                . = ALIGN (0x4)
  *(.eh_frame)
-                0x00000c28                . = ALIGN (0x4)
-                0x00000c28                __text_end = .
+                0x00000ea8                . = ALIGN (0x4)
+                0x00000ea8                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x00000c28        0x0
- .vfp11_veneer  0x00000c28        0x0 linker stubs
+.vfp11_veneer   0x00000ea8        0x0
+ .vfp11_veneer  0x00000ea8        0x0 linker stubs
 
-.v4_bx          0x00000c28        0x0
- .v4_bx         0x00000c28        0x0 linker stubs
+.v4_bx          0x00000ea8        0x0
+ .v4_bx         0x00000ea8        0x0 linker stubs
 
-.iplt           0x00000c28        0x0
- .iplt          0x00000c28        0x0 converter.o
+.iplt           0x00000ea8        0x0
+ .iplt          0x00000ea8        0x0 note_player_gpio.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00000c28                . = ALIGN (0x4)
-                0x00000c28                __exidx_start = .
+                0x00000ea8                . = ALIGN (0x4)
+                0x00000ea8                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
-.ARM.exidx      0x00000c28        0x8
+.ARM.exidx      0x00000ea8        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00000c28        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00000ea8        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
 
-.rel.dyn        0x00000c30        0x0
- .rel.iplt      0x00000c30        0x0 converter.o
-                0x00000c30                . = ALIGN (0x4)
-                0x00000c30                __exidx_end = .
+.rel.dyn        0x00000eb0        0x0
+ .rel.iplt      0x00000eb0        0x0 note_player_gpio.o
+                0x00000eb0                . = ALIGN (0x4)
+                0x00000eb0                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x14010
@@ -528,11 +583,11 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x20014000                . = ALIGN (0x4)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss._ZZN3due9now_ticksEvE4high
-                0x20014000        0x8 player.o
+                0x20014000        0x8 note_player_gpio.o
  .bss._ZZN3due9now_ticksEvE8last_low
-                0x20014008        0x4 player.o
+                0x20014008        0x4 note_player_gpio.o
  .bss._ZZN3due9now_ticksEvE9init_done
-                0x2001400c        0x1 player.o
+                0x2001400c        0x1 note_player_gpio.o
  .bss._ZZN3due9uart_initEvE9init_done
                 0x2001400d        0x1 hwlib.o
                 0x20014010                . = ALIGN (0x4)
@@ -542,41 +597,38 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x20014010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20014010       0x38 load address 0x00000c30
+.data           0x20014010       0x1c load address 0x00000eb0
                 0x20014010                . = ALIGN (0x4)
-                0x00000c30                __data_init_start = LOADADDR (.data)
+                0x00000eb0                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20014010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
                 0x20014010                . = ALIGN (0x4)
  *(.data .data.* .gnu.linkonce.d.*)
  .data._ZN6sam3xa15SystemCoreClockE
-                0x20014010        0x4 player.o
+                0x20014010        0x4 note_player_gpio.o
                 0x20014010                _ZN6sam3xa15SystemCoreClockE
- .data.frequencies
-                0x20014014       0x1c player.o
-                0x20014014                frequencies
  .data._ZN3due7hw_uartE
-                0x20014030        0x4 hwlib.o
-                0x20014030                _ZN3due7hw_uartE
+                0x20014014        0x4 hwlib.o
+                0x20014014                _ZN3due7hw_uartE
  .data._ZN5hwlib4coutE
-                0x20014034       0x14 hwlib.o
-                0x20014034                _ZN5hwlib4coutE
-                0x20014048                . = ALIGN (0x4)
-                0x20014048                __data_end = .
+                0x20014018       0x14 hwlib.o
+                0x20014018                _ZN5hwlib4coutE
+                0x2001402c                . = ALIGN (0x4)
+                0x2001402c                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000c30                __data_init_end = LOADADDR (.data)
+                0x00000eb0                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
-                0x00000038                PROVIDE (__data_size, (__data_end - __data_start))
-                0x00000038                PROVIDE (__data_init_size, __data_size)
+                0x0000001c                PROVIDE (__data_size, (__data_end - __data_start))
+                0x0000001c                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x20014048        0x0 load address 0x00000c68
- .igot.plt      0x20014048        0x0 converter.o
-                0x20014048                . = ALIGN (0x4)
-                0x20014048                __heap_start = .
+.igot.plt       0x2001402c        0x0 load address 0x00000ecc
+ .igot.plt      0x2001402c        0x0 note_player_gpio.o
+                0x2001402c                . = ALIGN (0x4)
+                0x2001402c                __heap_start = .
                 [!provide]                PROVIDE (__heap_start, __heap_start)
-                0x20014048                . = ALIGN (0x4)
+                0x2001402c                . = ALIGN (0x4)
                 0x20018000                __heap_end = __ram_end
                 [!provide]                PROVIDE (__heap_end, __heap_end)
 
@@ -646,9 +698,9 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
  .debug_loc     0x00000000      0xe8b c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
 
 .comment        0x00000000       0x11
- .comment       0x00000000       0x11 converter.o
+ .comment       0x00000000       0x11 note_player_gpio.o
                                  0x12 (size before relaxing)
- .comment       0x00000011       0x12 player.o
+ .comment       0x00000011       0x12 rtttl_player.o
  .comment       0x00000011       0x12 hwlib.o
  .comment       0x00000011       0x12 main.o
  .comment       0x00000011       0x12 bmptk_cortex.o
@@ -677,27 +729,29 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x00000000       0x33
  *(.ARM.attributes)
  .ARM.attributes
-                0x00000000       0x33 converter.o
+                0x00000000       0x33 melody.o
  .ARM.attributes
-                0x00000033       0x33 player.o
+                0x00000033       0x33 note_player_gpio.o
  .ARM.attributes
-                0x00000066       0x33 hwlib.o
+                0x00000066       0x33 rtttl_player.o
  .ARM.attributes
-                0x00000099       0x33 main.o
+                0x00000099       0x33 hwlib.o
  .ARM.attributes
-                0x000000cc       0x33 bmptk_cortex.o
+                0x000000cc       0x33 main.o
  .ARM.attributes
-                0x000000ff       0x33 bmptk_heap_bmptk.o
+                0x000000ff       0x33 bmptk_cortex.o
  .ARM.attributes
-                0x00000132       0x33 bmptk_fixed_size_stack.o
+                0x00000132       0x33 bmptk_heap_bmptk.o
  .ARM.attributes
-                0x00000165       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
+                0x00000165       0x33 bmptk_fixed_size_stack.o
  .ARM.attributes
-                0x00000188       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+                0x00000198       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_ldivmod.o)
  .ARM.attributes
-                0x000001ab       0x33 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+                0x000001bb       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x000001de       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+                0x000001de       0x33 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x00000211       0x23 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
 
 /DISCARD/
  *(.note.GNU-stack)

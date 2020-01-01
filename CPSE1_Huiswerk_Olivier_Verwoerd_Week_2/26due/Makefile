@@ -24,7 +24,6 @@ HEADERS += rtttl_player.hpp
 SOURCES += rtttl_player.cpp
 
 # and defer to the Makefile.due there
-include maakfile
 RELATIVE := $(RELATIVE)../
 include $(RELATIVE)Makefile.due
 

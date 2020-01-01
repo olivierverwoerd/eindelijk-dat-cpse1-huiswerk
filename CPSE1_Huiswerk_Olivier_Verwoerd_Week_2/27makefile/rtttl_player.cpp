@@ -1,126 +1,77 @@
-#include "player.hpp"
-
-// ===========================================================================
-//
-// standard notes
-//
-// ===========================================================================
-
-/*class note {
-public:
-   const int frequency;
-   const int duration;
-   
-   // from https://www.seventhstring.com/resources/notefrequencies.html
-   static const int A4  = 440;
-   static const int A4s = 466;
-   static const int B4  = 494;
-   static const int C5  = 523;
-   static const int C5s = 554;
-   static const int D5  = 587;
-   static const int D5s = 622;
-   static const int E5  = 659;
-   static const int F5  = 698;
-   static const int F5s = 740;
-   static const int G5  = 784;
-   static const int G5s = 830;
-   static const int A5  = 880;
-   static const int A5s = 932;
-   static const int B5  = 987;
-   
-   static const int dF = 1'000'000;
-   static const int dH = dF / 2;
-   static const int dQ = dF / 4;
-};*/
-
-
-// ===========================================================================
-//
-// interface for a note player
-//
-// ===========================================================================
-
-
-// ===========================================================================
-//
-// simple note player for a speaker connected to a GPIO pin
-//
-// ===========================================================================
-
-   void lsp_player::play( const note & n )  {
-      if( n.frequency == 0 ){
-         hwlib::wait_us( n.duration );
-      } else {
-         auto end = hwlib::now_us() + n.duration;
-         auto half_period = 1'000'000 / ( 2 * n.frequency );    
-         while( end > hwlib::now_us() ){
-            lsp.set( 1 );
-            hwlib::wait_us( half_period );
-            lsp.set( 0 );
-            hwlib::wait_us( half_period );
-         }
-      }     
-   };
-
-
-// ===========================================================================
-//
-// rtttl string player
-//
-// ===========================================================================
+#ifdef BMPTK_TARGET
+   #include "hwlib.hpp"
+   #define COUT hwlib::cout
+#else
+   #include <iostream>
+   #define HWLIB_TRACE std::cerr << "\n" << std::flush
+   #define COUT std::cerr
+#endif
+#include "rtttl_player.hpp"
 
 bool is_digit( char c ){ return ( c >= '0' ) && ( c <= '9' ); }
 bool is_lowercase( char c ){ return ( c >= 'a' ) && ( c <= 'z' ); }
+int frequencies[] = { 440'000, 493'880, 261'630, 293'660, 329'630, 349'230, 392'000 };
 
-int frequencies[] = { 440, 494, 523, 587, 659, 698, 784 };
-
-void play(player & lsp, const char *s ){
-   int def_duration = 4, def_octave = 6, value;
+void rtttl_play( note_player & lsp, const char *s ){
+   int def_duration = 4, def_octave = 6, beat = 100, value;
    int duration, octave, frequency;
    int state = 0;
    char def;
    bool dot;
    for( const char * p = s; state >= 0; p++ ){
       const char c = *p;
+
       switch(state ){
              
          // title 
          case 0:
+            // ignore title (chars up until the first ':')
             if( c == ':' ){
                state = 1;
-            } else {
-               hwlib::cout << c;
             } 
             break;
                
           // defaults  
           case 1:
-            if( c == ':' ){
+               // end of the defaults, start of the melody                
+            if( c == ':' ){                
                state = 3;
+               
+            // start of a default (d,o,b)               
             } if( is_lowercase( c )){
                def = c;
-               value = 0;
                state = 2;
-            }
+               
+            // unrecognised default letter             
+            } else {
+               HWLIB_TRACE << "c=[" << c << "]";
+            } 
             break;   
 
-         // defaults, letter stored in def
+         // defaults, letter has been stored in def
          case 2:
+            // start the value
             if( c == '=' ){
-               // ignore the =
+               value = 0;
+               
+            // digit: update the value
             } else if( is_digit( c )){
                value = ( 10 * value ) + ( c - '0' );
+               
+            // end of the value: update the default   
             } else if(( c == ':' ) || ( c == ',' )) {
                if( def == 'o'){
                   def_octave = value;
                } else if( def == 'd' ){
                   def_duration = value;
                } else if( def == 'b' ){
-                  // ignore
+                  beat = value;
                } else {
                   HWLIB_TRACE << "def=[" << def << "]";
                }   
                state = ( c == ':' ) ? 3 : 1;
+               
+            // unrecognised letter in the value of a default
             } else {
                HWLIB_TRACE << "c=[" << c << "]";
             }
@@ -132,19 +83,22 @@ void play(player & lsp, const char *s ){
             octave = def_octave;
             state = 4;
             dot = 0;
-            // fallthrough!!
+            
+            // ignore a space before a note
+            if( c == ' ' ){
+                break;
+            }
+            
+            // deliberate fallthrough!!
                
          // duration 1  
          case 4:   
-            if( c == '\0' ){
-               state = -1;
-               break;
-            } else if( is_digit( c )){
+            if( is_digit( c )){
                duration = c -'0';
                state = 5;
                break;
             }            
-            // fallthrough!
+            // deliberate fallthrough!!
             
          // duration 2 
          case 5:   
@@ -153,16 +107,19 @@ void play(player & lsp, const char *s ){
                state = 6;
                break;
             }            
-            // fallthrough!
+            // deliberate fallthrough!!
                
          // note letter   
          case 6:   
+            // select the note, or a pause
             if( is_lowercase( c )){
                if( c == 'p' ){
                    frequency = 0;
                } else {
                   frequency = frequencies[ c - 'a' ]; 
                }   
+               
+            // unrecognised letter in note specification               
             } else {
                HWLIB_TRACE << "c=[" << c << "]";
             }   
@@ -172,11 +129,11 @@ void play(player & lsp, const char *s ){
          // optional #   
          case 7:   
             if( c == '#' ){
-               frequency = 10595 * frequency / 10000;
+               frequency = 10595LL * frequency / 10000;
                state = 8;
                break;
             }
-            // fallthrough!
+            // deliberate fallthrough!!
 
          // optional .
          case 8:
@@ -185,7 +142,7 @@ void play(player & lsp, const char *s ){
                state = 9;
                break;
             }            
-            // fallthrough!
+            // deliberate fallthrough!!
 
          case 9:
             if( is_digit( c )){
@@ -193,18 +150,21 @@ void play(player & lsp, const char *s ){
                state = 10;
                break;
             }        
-            // fallthrough!
+            // deliberate fallthrough!!
                
          case 10:   
             if( ( c == ',' ) || ( c == '\0') ){
-               while( octave > 5 ){ --octave; frequency *= 2; }
-               duration = 2'000'000 / duration;
+               while( octave > 4 ){ --octave; frequency *= 2; }
+               int note_duration = ( 4 * 60'000'000 ) / ( duration * beat );
                if( dot ){
-                  duration = 3 * duration / 2;
+                  duration += duration / 2;
                }
 
-               lsp.play( note{ frequency, duration } ); 
+               lsp.play( note{ frequency / 1000, note_duration } ); 
+			   
                state = 3;
+
+            // unrecognised character in or after note 
             } else {
                HWLIB_TRACE << "c=[" << c << "]";
             }
@@ -214,6 +174,4 @@ void play(player & lsp, const char *s ){
             break;            
       }         
    }
-   HWLIB_TRACE << "done";
-};   
-   
+}   
