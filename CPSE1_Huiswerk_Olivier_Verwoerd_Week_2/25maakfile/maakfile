@@ -1,0 +1,23 @@
+CppVersion := -std=c++17
+
+generator : note_export_to_rtttl.o rtttl_player.o
+	g++ $(CppVersion) note_player.hpp note.hpp melody.hpp fur_elise.hpp note_export_to_rtttl.o rtttl_player.o generator.cpp -o generator
+
+rtttl_player.o : rtttl_player.cpp
+	g++ $(CppVersion) -c rtttl_player.cpp note_player.hpp note.hpp
+
+note_export_to_rtttl.o : note_export_to_rtttl.cpp
+	g++ $(CppVersion) -c note_export_to_rtttl.cpp
+
+melody.cpp : generator
+	./generator
+
+.PHONY: clean clean_all run
+clean :
+	rm -f *.o generator
+
+clean_all :
+	rm -f *.o generator melody.cpp
+
+run : generator
+	./generator
