@@ -1,5 +1,6 @@
 #include "hwlib.hpp"
 #include "melody.hpp"
+#include "melody.cpp"
 #include "note_player_gpio.hpp"
 #include "rtttl_player.hpp"
 
@@ -25,12 +26,11 @@ const char one[] =
 int main(void) {
 
   namespace target = hwlib::target;
-  auto lsp = target::pin_out(target::pins::d7);
+  auto lsp = target::pin_out(target::pins::d51);
   auto p = note_player_gpio(lsp);
   hwlib::wait_ms(10);
 
   HWLIB_TRACE;
-
-  auto m = melody();
+  auto m = song();
   m.play(p);
 }

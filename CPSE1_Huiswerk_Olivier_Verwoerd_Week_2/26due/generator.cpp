@@ -10,18 +10,11 @@ const char one[]          = "NumberOne:d=16,o=5,b=168:4f.,8c6,16b5,16c6,16b5,16c
 
 int main( void ){	
    auto p = note_export_to_rtttl();
-   //hwlib::wait_ms( 10 );
-   //
-   //HWLIB_TRACE;
-   //
-   //if( 0 ){
-   //   auto fe = fur_elise();
-   //   fe.play( p );
-   //}      
+ 
    
    if( 0 ){ rtttl_play( p, sos ); }   
    if( 0 ){ rtttl_play( p, let_it_be );  }
    if( 0 ){ rtttl_play( p, muppets );  }
-   if( 0 ){ rtttl_play( p, rickroll );  }
-   if( 1 ){ rtttl_play( p, one );  }
+   if( 1 ){ rtttl_play( p, rickroll );  }
+   if( 0 ){ rtttl_play( p, one );  }
 }

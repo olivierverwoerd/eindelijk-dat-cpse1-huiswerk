@@ -287,6 +287,8 @@ Discarded input sections
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
  .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
+ .group         0x00000000        0x8 main.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -406,7 +408,7 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 [!provide]                PROVIDE (__ram_size, __ram_size)
                 [!provide]                PROVIDE (__ram_end, __ram_end)
 
-.text           0x00000000      0x82c
+.text           0x00000000      0xea8
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                __text_start = .
                 [!provide]                PROVIDE (__text_start, __text_start)
@@ -479,78 +481,86 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x00000348        0xe main.o
                 0x00000348                _ZN3due7pin_out3setEbN5hwlib9bufferingE
  *fill*         0x00000356        0x2 
+ .text._ZN4song4playER11note_player
+                0x00000358      0x5d0 main.o
+                0x00000358                _ZN4song4playER11note_player
  .text.startup.main
-                0x00000358       0x74 main.o
-                0x00000358                main
+                0x00000928       0x84 main.o
+                0x00000928                main
  .text.__startup
-                0x000003cc       0x48 bmptk_cortex.o
-                0x000003cc                __startup
- .text          0x00000414       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
-                0x00000414                __aeabi_uldivmod
- .text          0x00000444      0x2d0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
-                0x00000444                __udivmoddi4
- .text          0x00000714        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
-                0x00000714                __aeabi_ldiv0
-                0x00000718                . = ALIGN (0x4)
+                0x000009ac       0x48 bmptk_cortex.o
+                0x000009ac                __startup
+ .text          0x000009f4       0x30 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_aeabi_uldivmod.o)
+                0x000009f4                __aeabi_uldivmod
+ .text          0x00000a24      0x2d0 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+                0x00000a24                __udivmoddi4
+ .text          0x00000cf4        0x4 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_dvmd_tls.o)
+                0x00000cf4                __aeabi_ldiv0
+                0x00000cf8                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00000718        0x0 linker stubs
- .glue_7t       0x00000718        0x0 linker stubs
-                0x00000718                . = ALIGN (0x4)
+ .glue_7        0x00000cf8        0x0 linker stubs
+ .glue_7t       0x00000cf8        0x0 linker stubs
+                0x00000cf8                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
-                0x00000718       0x33 note_player_gpio.o
- *fill*         0x0000074b        0x1 
+                0x00000cf8       0x33 note_player_gpio.o
+ *fill*         0x00000d2b        0x1 
  .rodata._ZTV16note_player_gpio
-                0x0000074c        0xc note_player_gpio.o
-                0x0000074c                _ZTV16note_player_gpio
+                0x00000d2c        0xc note_player_gpio.o
+                0x00000d2c                _ZTV16note_player_gpio
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x00000758       0xa4 note_player_gpio.o
+                0x00000d38       0xa4 note_player_gpio.o
  .rodata._ZTVN5hwlib20cout_using_uart_putcE
-                0x000007fc       0x10 hwlib.o
-                0x000007fc                _ZTVN5hwlib20cout_using_uart_putcE
+                0x00000ddc       0x10 hwlib.o
+                0x00000ddc                _ZTVN5hwlib20cout_using_uart_putcE
  .rodata._ZTVN3due7pin_outE
-                0x0000080c       0x10 main.o
-                0x0000080c                _ZTVN3due7pin_outE
+                0x00000dec       0x10 main.o
+                0x00000dec                _ZTVN3due7pin_outE
+ .rodata._ZTV4song
+                0x00000dfc        0xc main.o
+                0x00000dfc                _ZTV4song
+ .rodata        0x00000e08       0x88 main.o
  .rodata.main.str1.1
-                0x0000081c       0x10 main.o
-                0x0000082c                . = ALIGN (0x4)
+                0x00000e90       0x17 main.o
+                0x00000ea8                . = ALIGN (0x4)
+ *fill*         0x00000ea7        0x1 
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000082c                . = ALIGN (0x4)
+                0x00000ea8                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x0000082c                . = ALIGN (0x4)
+                0x00000ea8                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x0000082c                . = ALIGN (0x4)
+                0x00000ea8                . = ALIGN (0x4)
  *(.eh_frame)
-                0x0000082c                . = ALIGN (0x4)
-                0x0000082c                __text_end = .
+                0x00000ea8                . = ALIGN (0x4)
+                0x00000ea8                __text_end = .
                 [!provide]                PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x0000082c        0x0
- .vfp11_veneer  0x0000082c        0x0 linker stubs
+.vfp11_veneer   0x00000ea8        0x0
+ .vfp11_veneer  0x00000ea8        0x0 linker stubs
 
-.v4_bx          0x0000082c        0x0
- .v4_bx         0x0000082c        0x0 linker stubs
+.v4_bx          0x00000ea8        0x0
+ .v4_bx         0x00000ea8        0x0 linker stubs
 
-.iplt           0x0000082c        0x0
- .iplt          0x0000082c        0x0 note_player_gpio.o
+.iplt           0x00000ea8        0x0
+ .iplt          0x00000ea8        0x0 note_player_gpio.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x0000082c                . = ALIGN (0x4)
-                0x0000082c                __exidx_start = .
+                0x00000ea8                . = ALIGN (0x4)
+                0x00000ea8                __exidx_start = .
                 [!provide]                PROVIDE (__exidx_start, __exidx_start)
 
-.ARM.exidx      0x0000082c        0x8
+.ARM.exidx      0x00000ea8        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x0000082c        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00000ea8        0x8 c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/thumb/cortex_m3\libgcc.a(_udivmoddi4.o)
 
-.rel.dyn        0x00000834        0x0
- .rel.iplt      0x00000834        0x0 note_player_gpio.o
-                0x00000834                . = ALIGN (0x4)
-                0x00000834                __exidx_end = .
+.rel.dyn        0x00000eb0        0x0
+ .rel.iplt      0x00000eb0        0x0 note_player_gpio.o
+                0x00000eb0                . = ALIGN (0x4)
+                0x00000eb0                __exidx_end = .
                 [!provide]                PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x20000000    0x14010
@@ -587,9 +597,9 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x20014010                __bss_end = .
                 [!provide]                PROVIDE (__bss_end, __bss_end)
 
-.data           0x20014010       0x1c load address 0x00000834
+.data           0x20014010       0x1c load address 0x00000eb0
                 0x20014010                . = ALIGN (0x4)
-                0x00000834                __data_init_start = LOADADDR (.data)
+                0x00000eb0                __data_init_start = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_start, __data_init_start)
                 0x20014010                __data_start = .
                 [!provide]                PROVIDE (__data_start, __data_start)
@@ -607,13 +617,13 @@ LOAD c:/sysgcc/arm-eabi/bin/../lib/gcc/arm-eabi/7.2.0/../../../../arm-eabi/lib/t
                 0x2001402c                . = ALIGN (0x4)
                 0x2001402c                __data_end = .
                 [!provide]                PROVIDE (__data_end, __data_end)
-                0x00000834                __data_init_end = LOADADDR (.data)
+                0x00000eb0                __data_init_end = LOADADDR (.data)
                 [!provide]                PROVIDE (__data_init_end, __data_init_end)
                 0x0000001c                PROVIDE (__data_size, (__data_end - __data_start))
                 0x0000001c                PROVIDE (__data_init_size, __data_size)
                 [!provide]                PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x2001402c        0x0 load address 0x00000850
+.igot.plt       0x2001402c        0x0 load address 0x00000ecc
  .igot.plt      0x2001402c        0x0 note_player_gpio.o
                 0x2001402c                . = ALIGN (0x4)
                 0x2001402c                __heap_start = .
